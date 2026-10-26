@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f0e8">
+<meta name="description" content="Convite de casamento de Emília e Afonso">
+<title>Emília & Afonso — Convite de Casamento</title>
+<style>
+:root{--paper:#f4f0e8;--ink:#172019;--muted:#6c7068;--line:#d9d2c6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit}
+.top{position:sticky;top:0;z-index:5;background:rgba(244,240,232,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);text-align:center;padding:15px 10px;font-size:10px;letter-spacing:.35em;text-transform:uppercase}
+.hero{min-height:88vh;max-width:1300px;margin:auto;padding:38px 7vw 54px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto;gap:20px;align-items:center}
+.eyebrow{grid-column:1/-1;text-align:center;letter-spacing:.32em;text-transform:uppercase;font-size:10px;color:var(--muted)}
+.name{font-family:Georgia,'Times New Roman',serif;font-size:clamp(4rem,12vw,10rem);line-height:.78;letter-spacing:-.075em;font-weight:400;margin:0}.first{align-self:start}.second{text-align:right;align-self:end}
+.portrait-wrap{grid-column:1/-1;grid-row:2;justify-self:center;width:min(42vw,350px);height:min(42vw,350px);min-width:220px;min-height:220px;border-radius:50%;overflow:hidden;background:#d8d5cf;box-shadow:0 24px 55px #2222;position:relative}
+.portrait-wrap img{width:100%;height:100%;object-fit:cover;display:block}.portrait-placeholder{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px;color:#62645e;font-family:Georgia,serif;font-size:20px}
+.hero-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--ink);padding-top:14px;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.section{padding:90px 7vw;max-width:1000px;margin:auto;text-align:center}.section-label{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+h2{font:400 clamp(2.5rem,7vw,5.2rem)/1 Georgia,'Times New Roman',serif;letter-spacing:-.045em;margin:18px 0 25px}.lead{font:clamp(1.1rem,2.5vw,1.45rem)/1.7 Georgia,serif;max-width:650px;margin:0 auto;color:#42483f}
+.date{font:clamp(1.8rem,5vw,3.2rem) Georgia,serif;margin:28px 0 12px}.countdown{display:flex;justify-content:center;gap:clamp(12px,4vw,36px);margin:30px 0}.countdown div{min-width:55px}.countdown strong{display:block;font:clamp(1.8rem,5vw,3rem) Georgia,serif;font-weight:400}.countdown span{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.details{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:35px;text-align:left}.detail{border-top:1px solid var(--line);padding:20px 0}.detail h3{font:28px Georgia,serif;font-weight:400;margin:0 0 10px}.detail p{line-height:1.7;color:var(--muted);margin:5px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 22px;border:1px solid var(--ink);text-decoration:none;text-transform:uppercase;letter-spacing:.12em;font-size:10px;transition:.2s;background:transparent;cursor:pointer}.btn.dark{background:var(--ink);color:var(--paper)}.btn:hover{transform:translateY(-2px)}.button-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
+.form-frame{width:100%;height:720px;border:1px solid var(--line);background:#fff;margin-top:28px}.note{font-size:12px;line-height:1.7;color:var(--muted);max-width:600px;margin:20px auto}
+footer{border-top:1px solid var(--line);padding:35px 20px;text-align:center;font:24px Georgia,serif}.music{position:fixed;right:20px;bottom:20px;z-index:8;width:54px;height:54px;border-radius:50%;border:1px solid var(--ink);background:var(--paper);font-size:20px;cursor:pointer;box-shadow:0 4px 16px #0001}
+@media(min-width:800px){.hero{min-height:calc(100vh - 45px)}}@media(max-width:620px){.hero{min-height:78vh;padding:28px 6vw 35px;gap:15px}.name{font-size:clamp(3.7rem,17vw,6.4rem)}.portrait-wrap{width:60vw;height:60vw;min-width:190px;min-height:190px}.hero-bottom{font-size:8px;letter-spacing:.1em}.section{padding:65px 7vw}.details{grid-template-columns:1fr}.form-frame{height:780px}}
+</style>
+</head>
+<body>
+<div class="top">Convite de casamento</div>
+<main>
+<section class="hero" id="inicio">
+<div class="eyebrow">Com amor, convidamos-te para celebrar connosco</div>
+<h1 class="name first" id="nome1">Emília</h1>
+<div class="portrait-wrap"><img id="fotoCasal" src="assets/casal.jpg" alt="Fotografia dos noivos" onerror="this.style.display='none';document.getElementById('placeholder').style.display='flex'"><div class="portrait-placeholder" id="placeholder">Adicionar aqui<br>a fotografia dos noivos</div></div>
+<h1 class="name second" id="nome2">Afonso</h1>
+<div class="hero-bottom"><span id="dataCurta">19 · 12 · 2026</span><span>O início de sempre ↘</span></div>
+</section>
+<section class="section" id="historia"><div class="section-label">Duas histórias, um caminho</div><h2>Vamos casar!</h2><p class="lead" id="mensagem">Com muita alegria, convidamos a nossa família e os nossos amigos para partilharem connosco este dia tão especial. A vossa presença tornará este momento ainda mais inesquecível.</p></section>
+<section class="section" id="data"><div class="section-label">Guardem esta data</div><div class="date" id="dataLonga">19 de Dezembro de 2026</div>
+<div class="countdown"><div><strong id="dias">—</strong><span>Dias</span></div><div><strong id="horas">—</strong><span>Horas</span></div><div><strong id="minutos">—</strong><span>Minutos</span></div><div><strong id="segundos">—</strong><span>Segundos</span></div></div>
+<div class="details"><div class="detail"><h3>Cerimónia</h3><p id="localCerimonia">Chimoio</p><p id="horaCerimonia">14h00</p></div><div class="detail"><h3>Recepção</h3><p id="localRecepcao">Chimoio — local a confirmar</p><p id="horaRecepcao">A confirmar</p></div></div>
+<div class="button-row"><a class="btn" id="mapaBtn" href="https://www.google.com/maps/search/?api=1&query=Chimoio%2C%20Mozambique" target="_blank" rel="noopener">Ver localização</a></div></section>
+<section class="section" id="programa"><div class="section-label">O dia do nosso casamento</div><h2>Programa</h2><div class="details"><div class="detail"><h3>Chegada dos convidados</h3><p>13h30</p></div><div class="detail"><h3>Cerimónia</h3><p>14h00</p></div><div class="detail"><h3>Fotografias</h3><p>Após a cerimónia</p></div><div class="detail"><h3>Recepção e festa</h3><p>Hora e local a confirmar</p></div></div></section>
+<section class="section" id="presenca"><div class="section-label">A tua presença é importante</div><h2>Vens celebrar connosco?</h2><p class="lead">Por favor, confirma a tua presença através do formulário. Se preferires, também podes falar directamente connosco pelo WhatsApp.</p><div id="formContainer"></div><p class="note" id="formNote">O formulário de confirmação será activado assim que adicionares o link de incorporação do Google Forms. Até lá, podes confirmar pelo WhatsApp.</p><div class="button-row"><a class="btn dark" id="whatsappBtn" href="https://wa.me/258847847138" target="_blank" rel="noopener">Confirmar pelo WhatsApp</a></div></section>
+</main>
+<footer>Com amor, Emília &amp; Afonso</footer>
+<button class="music" id="musicBtn" aria-label="Reproduzir música" title="Reproduzir música">♫</button><audio id="musica" loop></audio>
+<script>
+const CONFIG={
+ nome1:"Emília",nome2:"Afonso",
+ dataISO:"2026-12-19T14:00:00",dataTexto:"19 de Dezembro de 2026",dataCurta:"19 · 12 · 2026",
+ mensagem:"Com muita alegria, convidamos a nossa família e os nossos amigos para partilharem connosco este dia tão especial. A vossa presença tornará este momento ainda mais inesquecível.",
+ localCerimonia:"Chimoio — endereço exacto a confirmar",horaCerimonia:"14h00",
+ localRecepcao:"Chimoio — local a confirmar",horaRecepcao:"A confirmar",
+ mapaUrl:"https://www.google.com/maps/search/?api=1&query=Chimoio%2C%20Mozambique",
+ whatsappNumero:"258847847138",
+ whatsappMensagem:"Olá! Gostaria de confirmar a minha presença no casamento de Emília e Afonso.",
+ formEmbedUrl:"https://docs.google.com/forms/d/e/1FAIpQLSf-0iiqo0Sz83lxEvxS8VxTvjaD3VoEoI_rbtxHqhsI0feGhQ/viewform?embedded=true",
+ musicaUrl:"assets/musica.mp3"
+};
+const $=id=>document.getElementById(id);
+$("nome1").textContent=CONFIG.nome1;$("nome2").textContent=CONFIG.nome2;$("dataLonga").textContent=CONFIG.dataTexto;$("dataCurta").textContent=CONFIG.dataCurta;
+$("mensagem").textContent=CONFIG.mensagem;$("localCerimonia").textContent=CONFIG.localCerimonia;$("horaCerimonia").textContent=CONFIG.horaCerimonia;$("localRecepcao").textContent=CONFIG.localRecepcao;$("horaRecepcao").textContent=CONFIG.horaRecepcao;$("mapaBtn").href=CONFIG.mapaUrl;
+$("whatsappBtn").href="https://wa.me/"+CONFIG.whatsappNumero+"?text="+encodeURIComponent(CONFIG.whatsappMensagem);
+if(CONFIG.formEmbedUrl){const iframe=document.createElement("iframe");iframe.className="form-frame";iframe.title="Confirmação de presença";iframe.src=CONFIG.formEmbedUrl;iframe.loading="lazy";iframe.setAttribute("frameborder","0");$("formContainer").appendChild(iframe);$("formNote").textContent="A tua resposta será registada no formulário de confirmação."}
+$("musica").src=CONFIG.musicaUrl;
+$("musicBtn").addEventListener("click",async()=>{const a=$("musica");try{if(a.paused){await a.play();$("musicBtn").textContent="Ⅱ"}else{a.pause();$("musicBtn").textContent="♫"}}catch(e){alert("Adiciona o ficheiro assets/musica.mp3 para activar a música.")}});
+function countdown(){const d=Math.max(0,new Date(CONFIG.dataISO).getTime()-Date.now());$("dias").textContent=Math.floor(d/86400000);$("horas").textContent=Math.floor(d%86400000/3600000);$("minutos").textContent=Math.floor(d%3600000/60000);$("segundos").textContent=Math.floor(d%60000/1000)}countdown();setInterval(countdown,1000);
+</script>
+</body></html>
