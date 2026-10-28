@@ -1312,7 +1312,7 @@ body.js-animations .reveal.delay-3 {
 
 <button class="music-btn" id="musicBtn" type="button" aria-label="Activar música" title="Activar música">♫</button>
 <span class="music-hint">Música</span>
-<audio id="music" loop preload="none"></audio>
+<audio id="music" autoplay loop preload="auto"></audio>
 
 <script>
 "use strict";
@@ -1445,23 +1445,42 @@ const music = document.getElementById("music");
 const musicBtn = document.getElementById("musicBtn");
 
 music.src = "./musica.mp3";
+music.autoplay = true;
+music.loop = true;
+music.preload = "auto";
+
+function actualizarBotaoMusica(tocando) {
+  musicBtn.classList.toggle("playing", tocando);
+  musicBtn.textContent = tocando ? "Ⅱ" : "♫";
+  musicBtn.setAttribute("aria-label", tocando ? "Pausar música" : "Activar música");
+  musicBtn.title = tocando ? "Pausar música" : "Activar música";
+}
+
+// Tenta iniciar a música assim que a página é aberta.
+// Alguns navegadores bloqueiam reprodução automática com som;
+// nesse caso, o visitante pode iniciá-la com o botão.
+window.addEventListener("load", async () => {
+  try {
+    await music.play();
+    actualizarBotaoMusica(true);
+  } catch (error) {
+    actualizarBotaoMusica(false);
+    musicBtn.title = "Clique para iniciar a música";
+    musicBtn.setAttribute("aria-label", "Clique para iniciar a música");
+  }
+});
+
+music.addEventListener("play", () => actualizarBotaoMusica(true));
+music.addEventListener("pause", () => actualizarBotaoMusica(false));
 
 musicBtn.addEventListener("click", async () => {
   try {
     if (music.paused) {
       await music.play();
-
-      musicBtn.classList.add("playing");
-      musicBtn.textContent = "Ⅱ";
-      musicBtn.setAttribute("aria-label", "Pausar música");
-      musicBtn.title = "Pausar música";
+      actualizarBotaoMusica(true);
     } else {
       music.pause();
-
-      musicBtn.classList.remove("playing");
-      musicBtn.textContent = "♫";
-      musicBtn.setAttribute("aria-label", "Activar música");
-      musicBtn.title = "Activar música";
+      actualizarBotaoMusica(false);
     }
   } catch (error) {
     alert(
