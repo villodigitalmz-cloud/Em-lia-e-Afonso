@@ -1140,6 +1140,47 @@ body.js-animations .reveal.delay-3 {
 @media (max-width:420px) { .intro-card { padding:25px 18px 26px; } .intro-photo { width:min(65%,220px); margin:19px auto; } .intro-countdown { gap:5px; } .intro-count-unit { min-width:51px; padding:8px 5px 6px; } .intro-count-unit strong { font-size:22px; } .intro-open-btn { letter-spacing:.1em; } }
 @media (prefers-reduced-motion:reduce) { .intro-card { animation:none; } .intro-petal { display:none; } }
 
+
+/* AJUSTE DE ENQUADRAMENTO: impedir que o topo da capa fique cortado */
+.intro-screen {
+  align-items: flex-start;
+  justify-content: center;
+  padding: 18px 14px 24px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.intro-card {
+  margin: auto;
+  padding: 25px 42px 22px;
+  flex: 0 0 auto;
+}
+.intro-eyebrow { margin-bottom: 9px; }
+.intro-title { font-size: clamp(40px, 5vw, 58px); }
+.intro-amp { margin: 2px 0; font-size: 25px; }
+.intro-photo { width: min(58%, 220px); margin: 14px auto 15px; }
+.intro-message { font-size: 12px; line-height: 1.65; margin-bottom: 10px; }
+.intro-details { margin: 10px 0 12px; font-size: 10px; }
+.intro-countdown { margin: 12px auto 15px; gap: 7px; }
+.intro-count-unit { min-width: 55px; padding: 7px 6px 6px; }
+.intro-count-unit strong { font-size: 23px; }
+.intro-open-btn { min-height: 49px; padding: 12px 14px; }
+.intro-note { margin-top: 9px; }
+@media (max-width: 600px) {
+  .intro-screen { padding: 16px 12px 20px; }
+  .intro-card { width: min(100%, 440px); padding: 23px 20px 22px; }
+  .intro-title { font-size: clamp(38px, 10vw, 54px); }
+  .intro-photo { width: min(62%, 205px); margin: 13px auto; }
+  .intro-message { font-size: 12px; }
+  .intro-count-unit { min-width: 0; flex: 1; }
+}
+@media (max-height: 740px) {
+  .intro-screen { padding-top: 10px; padding-bottom: 10px; }
+  .intro-card { padding-top: 17px; padding-bottom: 16px; }
+  .intro-photo { width: min(48%, 175px); margin: 9px auto 10px; }
+  .intro-details { margin: 7px 0 8px; }
+  .intro-countdown { margin: 8px auto 10px; }
+}
+
 </style>
 </head>
 
