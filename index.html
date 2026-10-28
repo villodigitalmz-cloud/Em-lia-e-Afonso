@@ -1093,112 +1093,52 @@ body.js-animations .reveal.delay-3 {
   }
 }
 
-/* PÁGINA INICIAL DE ABERTURA DO CONVITE */
+/* PÁGINA INICIAL — EXPERIÊNCIA ROMÂNTICA E INTERACTIVA */
 .intro-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 20000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow-y: auto;
-  padding: 24px 16px;
-  background:
-    radial-gradient(circle at top, rgba(168,137,93,.13), transparent 42%),
-    var(--paper);
-  transition: opacity .65s ease, visibility .65s ease;
+  position: fixed; inset: 0; z-index: 20000; display: flex; align-items: center; justify-content: center;
+  overflow-y: auto; padding: 22px 14px; isolation: isolate;
+  background: radial-gradient(ellipse at 50% 10%, rgba(255,255,255,.96), transparent 48%),
+    radial-gradient(circle at 8% 88%, rgba(214,173,153,.24), transparent 34%),
+    radial-gradient(circle at 94% 15%, rgba(185,151,92,.20), transparent 30%), #f4eee8;
+  transition: opacity .8s ease, visibility .8s ease;
 }
-.intro-screen.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
+.intro-screen::before, .intro-screen::after { content:"❧"; position:absolute; z-index:-1; color:rgba(160,124,78,.22); font:clamp(120px,24vw,280px)/1 var(--serif); pointer-events:none; }
+.intro-screen::before { top:-35px; left:-25px; transform:rotate(-35deg); }
+.intro-screen::after { bottom:-55px; right:-18px; transform:rotate(145deg); }
+.intro-screen.is-hidden { opacity:0; visibility:hidden; pointer-events:none; }
 .intro-card {
-  width: min(100%, 480px);
-  padding: clamp(24px, 5vw, 42px);
-  text-align: center;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.48);
-  box-shadow: 0 18px 55px rgba(23,32,25,.09);
+  position:relative; width:min(100%, 540px); padding:clamp(25px,5vw,48px) clamp(20px,5vw,52px) 30px;
+  text-align:center; border:1px solid rgba(165,132,86,.42); outline:1px solid rgba(255,255,255,.85); outline-offset:6px;
+  background:linear-gradient(145deg, rgba(255,255,255,.92), rgba(250,244,238,.94));
+  box-shadow:0 28px 90px rgba(74,52,39,.16); animation:introRise 1s cubic-bezier(.2,.7,.2,1) both;
 }
-.intro-eyebrow {
-  margin: 0 0 18px;
-  color: var(--gold);
-  font: 11px/1.5 Arial, Helvetica, sans-serif;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-}
-.intro-title {
-  margin: 0;
-  color: var(--ink);
-  font: clamp(35px, 8vw, 56px)/1.04 var(--serif);
-  font-weight: 400;
-}
-.intro-amp {
-  display: block;
-  margin: 4px 0;
-  color: var(--gold);
-  font: italic 28px/1.2 var(--serif);
-}
-.intro-photo {
-  width: min(100%, 250px);
-  aspect-ratio: 4 / 5;
-  margin: 24px auto;
-  overflow: hidden;
-  border: 5px solid rgba(255,255,255,.8);
-  outline: 1px solid var(--line);
-  background: #e5dfd3;
-}
-.intro-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.intro-message {
-  max-width: 330px;
-  margin: 0 auto 18px;
-  color: var(--muted);
-  font: 14px/1.8 Arial, Helvetica, sans-serif;
-}
-.intro-details {
-  margin: 18px 0 24px;
-  color: var(--ink);
-  font: 12px/1.9 Arial, Helvetica, sans-serif;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.intro-open-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  width: 100%;
-  min-height: 50px;
-  padding: 14px 18px;
-  border: 1px solid var(--dark);
-  background: var(--dark);
-  color: #fff;
-  font: 12px/1.4 Arial, Helvetica, sans-serif;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background .2s ease, transform .2s ease;
-}
-.intro-open-btn:hover {
-  background: #2a3b2e;
-  transform: translateY(-1px);
-}
-.intro-note {
-  margin: 13px 0 0;
-  color: var(--muted);
-  font: 11px/1.5 Arial, Helvetica, sans-serif;
-}
-@media (max-width: 420px) {
-  .intro-card { padding: 24px 18px; }
-  .intro-photo { width: min(100%, 205px); margin: 19px auto; }
-  .intro-details { margin: 14px 0 20px; }
-}
+@keyframes introRise { from { opacity:0; transform:translateY(24px) scale(.98); } to { opacity:1; transform:translateY(0) scale(1); } }
+.intro-card::before { content:"✦"; position:absolute; top:13px; left:17px; color:#b3915c; font-size:16px; }
+.intro-card::after { content:"✦"; position:absolute; right:17px; bottom:13px; color:#b3915c; font-size:16px; }
+.intro-eyebrow { margin:0 0 13px; color:#9c7950; font:10px/1.6 Arial,Helvetica,sans-serif; letter-spacing:.28em; text-transform:uppercase; }
+.intro-title { margin:0; color:#354238; font:clamp(39px,9vw,65px)/.98 var(--serif); font-weight:400; }
+.intro-amp { display:block; margin:5px 0; color:#b18b55; font:italic 30px/1.1 var(--serif); }
+.intro-photo { position:relative; width:min(68%, 265px); aspect-ratio:4/5; margin:23px auto 22px; padding:6px; overflow:hidden; background:#fff; border:1px solid rgba(174,139,87,.55); box-shadow:0 12px 28px rgba(57,43,32,.14); transform:rotate(-1.2deg); }
+.intro-photo::after { content:""; position:absolute; inset:11px; border:1px solid rgba(255,255,255,.8); pointer-events:none; }
+.intro-photo img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .8s ease; }
+.intro-card:hover .intro-photo img { transform:scale(1.045); }
+.intro-message { max-width:350px; margin:0 auto 16px; color:#6e6b62; font:14px/1.8 Arial,Helvetica,sans-serif; }
+.intro-details { margin:16px 0 18px; color:#3c493e; font:11px/1.9 Arial,Helvetica,sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+.intro-details .intro-location { color:#8a7967; font-size:10px; letter-spacing:.19em; }
+.intro-countdown { display:flex; justify-content:center; gap:9px; margin:18px auto 23px; }
+.intro-count-unit { min-width:58px; padding:9px 7px 7px; border-top:1px solid rgba(177,139,85,.55); border-bottom:1px solid rgba(177,139,85,.3); background:rgba(255,255,255,.45); }
+.intro-count-unit strong { display:block; color:#354238; font:25px/1.1 var(--serif); font-weight:400; font-variant-numeric:tabular-nums; }
+.intro-count-unit span { display:block; margin-top:4px; color:#98816a; font:8px/1.2 Arial,Helvetica,sans-serif; letter-spacing:.13em; text-transform:uppercase; }
+.intro-open-btn { position:relative; display:inline-flex; align-items:center; justify-content:center; gap:12px; width:100%; min-height:53px; padding:15px 18px; overflow:hidden; border:1px solid #354238; background:#354238; color:#fff; font:10px/1.4 Arial,Helvetica,sans-serif; letter-spacing:.16em; text-transform:uppercase; cursor:pointer; transition:background .25s ease,transform .25s ease,box-shadow .25s ease; }
+.intro-open-btn::before { content:""; position:absolute; top:0; left:-120%; width:70%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent); transform:skewX(-20deg); transition:left .7s ease; }
+.intro-open-btn:hover { background:#4a5a4c; transform:translateY(-2px); box-shadow:0 8px 20px rgba(53,66,56,.2); }
+.intro-open-btn:hover::before { left:140%; }
+.intro-open-btn span { position:relative; }
+.intro-note { margin:13px 0 0; color:#9b8d7d; font:10px/1.6 Arial,Helvetica,sans-serif; letter-spacing:.04em; }
+.intro-petal { position:absolute; top:-35px; color:rgba(190,135,139,.55); pointer-events:none; animation:petalFall linear infinite; z-index:-1; }
+@keyframes petalFall { 0% { transform:translate3d(0,-8vh,0) rotate(0deg); opacity:0; } 12% { opacity:.85; } 88% { opacity:.75; } 100% { transform:translate3d(55px,110vh,0) rotate(440deg); opacity:0; } }
+@media (max-width:420px) { .intro-card { padding:25px 18px 26px; } .intro-photo { width:min(65%,220px); margin:19px auto; } .intro-countdown { gap:5px; } .intro-count-unit { min-width:51px; padding:8px 5px 6px; } .intro-count-unit strong { font-size:22px; } .intro-open-btn { letter-spacing:.1em; } }
+@media (prefers-reduced-motion:reduce) { .intro-card { animation:none; } .intro-petal { display:none; } }
 
 </style>
 </head>
@@ -1207,7 +1147,7 @@ body.js-animations .reveal.delay-3 {
 
 <div class="intro-screen" id="introScreen" role="dialog" aria-modal="true" aria-labelledby="introTitle">
   <div class="intro-card">
-    <p class="intro-eyebrow">Um convite especial</p>
+    <p class="intro-eyebrow">Com amor, convidamos-te</p>
     <h1 class="intro-title" id="introTitle">Emília</h1>
     <span class="intro-amp">&amp;</span>
     <h2 class="intro-title">Afonso</h2>
@@ -1216,20 +1156,25 @@ body.js-animations .reveal.delay-3 {
       <img src="./casal.jpg" alt="Emília e Afonso" onerror="this.style.display='none';">
     </div>
 
-    <p class="intro-message">
-      Com muita alegria, convidamos-te a fazer parte de um dos dias mais especiais das nossas vidas.
-    </p>
+    <p class="intro-message">Dois corações, uma promessa e um dia que ficará para sempre nas nossas memórias. Será uma alegria celebrar este amor contigo.</p>
 
     <div class="intro-details">
       <div>19 de Dezembro de 2026</div>
-      <div>Chimoio · Moçambique</div>
+      <div class="intro-location">Chimoio · Moçambique</div>
+    </div>
+
+    <div class="intro-countdown" aria-label="Contagem decrescente para o casamento">
+      <div class="intro-count-unit"><strong id="introDays">--</strong><span>Dias</span></div>
+      <div class="intro-count-unit"><strong id="introHours">--</strong><span>Horas</span></div>
+      <div class="intro-count-unit"><strong id="introMinutes">--</strong><span>Minutos</span></div>
+      <div class="intro-count-unit"><strong id="introSeconds">--</strong><span>Segundos</span></div>
     </div>
 
     <button class="intro-open-btn" id="openInvitationBtn" type="button">
-      <span>Confirmar presença e abrir convite</span>
-      <span aria-hidden="true">↗</span>
+      <span>Entrar no convite</span>
+      <span aria-hidden="true">♡</span>
     </button>
-    <p class="intro-note">Clica para abrir o convite e iniciar a música.</p>
+    <p class="intro-note">Toca para descobrir todos os detalhes e ouvir a nossa música.</p>
   </div>
 </div>
 
@@ -1629,6 +1574,40 @@ musicBtn.addEventListener("click", async () => {
 /* ABRIR CONVITE E TENTAR INICIAR A MÚSICA APÓS O CLIQUE DO VISITANTE */
 const introScreen = document.getElementById("introScreen");
 const openInvitationBtn = document.getElementById("openInvitationBtn");
+
+// Pétalas suaves em movimento para dar vida à página inicial.
+if (introScreen && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const petalSymbols = ["✿", "❀", "✧", "·"];
+  for (let i = 0; i < 17; i++) {
+    const petal = document.createElement("span");
+    petal.className = "intro-petal";
+    petal.setAttribute("aria-hidden", "true");
+    petal.textContent = petalSymbols[i % petalSymbols.length];
+    petal.style.left = `${(i * 37 + 7) % 100}%`;
+    petal.style.animationDuration = `${11 + (i % 8) * 1.7}s`;
+    petal.style.animationDelay = `${-(i % 12) * 1.4}s`;
+    petal.style.fontSize = `${10 + (i % 4) * 5}px`;
+    introScreen.appendChild(petal);
+  }
+}
+
+// Contagem decrescente até 19 de Dezembro de 2026.
+function actualizarContagemInicial() {
+  const alvo = new Date("2026-12-19T00:00:00+02:00").getTime();
+  const restante = Math.max(0, alvo - Date.now());
+  const unidades = {
+    introDays: Math.floor(restante / 86400000),
+    introHours: Math.floor((restante % 86400000) / 3600000),
+    introMinutes: Math.floor((restante % 3600000) / 60000),
+    introSeconds: Math.floor((restante % 60000) / 1000)
+  };
+  Object.entries(unidades).forEach(([id, valor]) => {
+    const elemento = document.getElementById(id);
+    if (elemento) elemento.textContent = String(valor).padStart(2, "0");
+  });
+}
+actualizarContagemInicial();
+window.setInterval(actualizarContagemInicial, 1000);
 
 if (introScreen && openInvitationBtn) {
   openInvitationBtn.addEventListener("click", async () => {
